@@ -6,7 +6,7 @@ import {
 import { CoffeeList } from '../../models/CoffeeList';
 import { CarouselContainer, CarouselTitleContainer, SeeMoreText } from './Carousel.styles';
 import { CoffeeTitle } from '../../screens/Home/HomeScreen.styles';
-import NewCoffeeCard from '../CoffeeCard/NewCoffeeCard';
+import CoffeeCard from '../CoffeeCard/CoffeeCard';
 
 interface CoffeeCarouselProps {
   navigation: any;
@@ -52,7 +52,7 @@ const CoffeeCarousel: React.FC<CoffeeCarouselProps> = ({
                         item: item,
                       });
                     }}>
-                    <NewCoffeeCard
+                    <CoffeeCard
                       coffeeItem={item}
                     />
                   </TouchableOpacity>

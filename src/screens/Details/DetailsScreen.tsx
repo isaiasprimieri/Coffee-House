@@ -19,7 +19,7 @@ import ImageBackgroundInfo from '../../components/ImageBackgroundInfo';
 import DetailsScreenFooter from '../../components/DetailsScreenFooter/DetailsScreenFooter';
 import { CoffeeList } from '../../models/CoffeeList';
 
-const NewDetailsScreen = ({navigation, route}: any) => {
+const DetailsScreen = ({navigation, route}: any) => {
   const Coffee: CoffeeList = route.params.item
   const CoffeeQuantityText = Coffee.type === "CAPSULES" ? Coffee.quantity + ' capsulas' : Coffee.quantity + ' de grãos'
 
@@ -44,6 +44,10 @@ const NewDetailsScreen = ({navigation, route}: any) => {
         />
 
         <View style={styles.FooterInfoArea}>
+        <Text style={styles.InfoTitle}>Nome</Text>
+        <Text numberOfLines={3} style={styles.DescriptionText}>
+                {Coffee.name}
+              </Text>
         <Text style={styles.InfoTitle}>Descrição</Text>
           {fullDesc ? (
             <TouchableWithoutFeedback
@@ -123,4 +127,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NewDetailsScreen;
+export default DetailsScreen;

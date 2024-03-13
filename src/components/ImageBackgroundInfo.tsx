@@ -35,6 +35,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
 }) => {
   const { name, quantity, roasted, ingredient, type, image_url } = coffeeItem;
   const typeTitle = type === "CAPSULES" ? "Capsulas" : "Grãos"
+  const CoffeeName = name.length > 12 ? name.substring(0, 12) + "..." : name;
 
   return (
     <View>
@@ -72,10 +73,10 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
           <View style={styles.ImageInfoInnerContainer}>
             <View style={styles.InfoContainerRow}>
               <View>
-                <Text style={styles.ItemTitleText}>{name}</Text>
+                <Text style={styles.ItemTitleText}>{CoffeeName}</Text>
                 <Text style={styles.ItemSubtitleText}>
                   
-                  {quantity > 1 ? quantity + ' Capsulas' : quantity + ' Capsula'}
+                  {quantity}
                 </Text>
               </View>
               <View style={styles.ItemPropertiesContainer}>

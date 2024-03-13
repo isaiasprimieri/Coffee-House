@@ -8,8 +8,9 @@ import { COLORS } from '../../theme/theme';
 import HeaderBar from '../../components/HeaderBar';
 import { BeanListData, CoffeeList, CoffeeListData } from '../../models/CoffeeList';
 import { CategoryText, CoffeeTitle, CoffeeTitleContainer, Container, EmptyListContainer, FooterContainer, ScreenTitle, ScrollView, SeeMoreContainer, SeeMoreText } from './HomeScreen.styles';
-import NewCoffeeCard from '../../components/CoffeeCard/NewCoffeeCard';
+import CoffeeCard from '../../components/CoffeeCard/CoffeeCard';
 import CoffeeCarousel from '../../components/Carousel/Carousel';
+import FooterTabScreenComponent from '../../components/FooterTabScreenComponent/FooterTabScreenComponent';
 
 
 const HomeScreen = ({navigation}: any) => {
@@ -29,10 +30,10 @@ const HomeScreen = ({navigation}: any) => {
     return (
       <Container>
       <StatusBar backgroundColor={COLORS.primaryBlackHex} />
+      <HeaderBar title='Bem-vindo, Isaías' />
       <ScrollView 
         showsVerticalScrollIndicator={false}
         >
-        <HeaderBar />
 
         <ScreenTitle>
             Encontre o café{'\n'}que mais combina{'\n'}com você
@@ -41,7 +42,7 @@ const HomeScreen = ({navigation}: any) => {
 
         <CoffeeCarousel coffeeList={BeanListData} title="Cafés em grãos" navigation={navigation} />
         
-        <FooterContainer/>  
+        <FooterTabScreenComponent/>  
 
       </ScrollView>
       </Container>

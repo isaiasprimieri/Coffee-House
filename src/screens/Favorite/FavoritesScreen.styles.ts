@@ -14,7 +14,6 @@ export const ScreenTitle = Styles.Text`
   font-family: 'Poppins-Bold';
   font-size: 24px;
   color: #fff;
-  align-self: center;
   margin-top: 20px;
 `;
 

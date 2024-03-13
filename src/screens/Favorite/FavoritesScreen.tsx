@@ -12,24 +12,27 @@ import {COLORS} from '../../theme/theme';
 import HeaderBar from '../../components/HeaderBar';
 import EmptyListAnimation from '../../components/EmptyListAnimation';
 import { CoffeeList, FavoriteListData } from '../../models/CoffeeList';
-import { ScreenTitle } from './FavoritesScreen.styles';
-import NewCoffeeCard from '../../components/CoffeeCard/NewCoffeeCard';
+import { Container, ScreenTitle } from './FavoritesScreen.styles';
+import CoffeeCard from '../../components/CoffeeCard/CoffeeCard';
+import FooterTabScreenComponent from '../../components/FooterTabScreenComponent/FooterTabScreenComponent';
 
 const FavoritesScreen = ({navigation}: any) => {
   const tabBarHeight = useBottomTabBarHeight();
 
   return (
-    <View style={styles.ScreenContainer}>
+    <Container>
       <StatusBar backgroundColor={COLORS.primaryBlackHex} />
      
-        <View
-          style={[styles.ScrollViewInnerView, {marginBottom: tabBarHeight}]}>
+       
           <View style={styles.ItemContainer}>
             <HeaderBar title="Favoritos" />
             {
               FavoriteListData.length > 0 ? (
                 <FlatList
                 numColumns={2}
+                ListFooterComponent={
+                  <FooterTabScreenComponent/>  
+                }
                 showsVerticalScrollIndicator={false}
                 ListHeaderComponent={
                   <>
@@ -58,7 +61,7 @@ const FavoritesScreen = ({navigation}: any) => {
                           item: item,
                         });
                       }}>
-                      <NewCoffeeCard
+                      <CoffeeCard
                         coffeeItem={item}
                       />
                     </TouchableOpacity>
@@ -66,13 +69,14 @@ const FavoritesScreen = ({navigation}: any) => {
                 }}
               />
               ) : (
+                <>
+                <HeaderBar title="Favoritos" />
                 <EmptyListAnimation title={'Sem Favoritos'} />
-
+                </>
               )
             }
           </View>
-        </View>
-    </View>
+    </Container>
   );
 };
 

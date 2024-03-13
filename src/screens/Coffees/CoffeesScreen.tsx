@@ -13,7 +13,7 @@ import {
   import EmptyListAnimation from '../../components/EmptyListAnimation';
 import { Container, ImageHeaderBarContainerWithBack, ScreenTitle, ScrollView } from './CoffeesScreen.styles';
 import { CoffeeList } from '../../models/CoffeeList';
-import NewCoffeeCard from '../../components/CoffeeCard/NewCoffeeCard';
+import CoffeeCard from '../../components/CoffeeCard/CoffeeCard';
 import GradientBGIcon from '../../components/GradientBGIcon';
   
   
@@ -71,7 +71,7 @@ import GradientBGIcon from '../../components/GradientBGIcon';
                         item: item,
                       });
                     }}>
-                    <NewCoffeeCard
+                    <CoffeeCard
                       coffeeItem={item}
                     />
                   </TouchableOpacity>

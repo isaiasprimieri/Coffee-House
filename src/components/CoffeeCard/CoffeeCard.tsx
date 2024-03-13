@@ -13,7 +13,7 @@ import {
   SPACING,
 } from '../../theme/theme';
 import CustomIcon from '../../models/CustomIcon';
-import { CardFooterRow, CardRatingContainer, CardRatingText, CardSubtitle, CardTitle, QuantityTitle, SocialImageView } from './NewCoffeeCard.styles';
+import { CardFooterRow, CardRatingContainer, CardRatingText, CardSubtitle, CardTitle, QuantityTitle, SocialImageView } from './CoffeeCard.styles';
 import { CoffeeList } from '../../models/CoffeeList';
 
 const CARD_WIDTH = Dimensions.get('window').width * 0.32;
@@ -23,7 +23,7 @@ interface CoffeeCardProps {
   coffeeItem: CoffeeList;
 }
 
-const NewCoffeeCard: React.FC<CoffeeCardProps> = ({
+const CoffeeCard: React.FC<CoffeeCardProps> = ({
   coffeeItem
 }) => {
   const { name, description, image_url, quantity, link} = coffeeItem;
@@ -81,4 +81,4 @@ const NewCoffeeCard: React.FC<CoffeeCardProps> = ({
   );
 };
 
-export default NewCoffeeCard;
+export default CoffeeCard;
