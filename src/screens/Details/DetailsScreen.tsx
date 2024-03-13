@@ -1,23 +1,13 @@
 import React, {useState} from 'react';
 import {
-  ScrollView,
   StatusBar,
-  StyleSheet,
-  Text,
-  View,
   TouchableWithoutFeedback,
-  TouchableOpacity,
+  ScrollView,
 } from 'react-native';
-import {
-  BORDERRADIUS,
-  COLORS,
-  FONTFAMILY,
-  FONTSIZE,
-  SPACING,
-} from '../../theme/theme';
 import ImageBackgroundInfo from '../../components/ImageBackgroundInfo';
 import DetailsScreenFooter from '../../components/DetailsScreenFooter/DetailsScreenFooter';
 import { CoffeeList } from '../../models/CoffeeList';
+import { DescriptionText, FooterInfoArea, InfoTitle, ScreenContainer, SizeOuterContainer, SizeText } from './DetailsScreen.styles';
 
 const DetailsScreen = ({navigation, route}: any) => {
   const Coffee: CoffeeList = route.params.item
@@ -30,101 +20,58 @@ const DetailsScreen = ({navigation, route}: any) => {
   };
 
   return (
-    <View style={styles.ScreenContainer}>
+    <ScreenContainer>
       <StatusBar translucent backgroundColor="transparent" />
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.ScrollViewFlex}>
+        contentContainerStyle={{
+          flexGrow: 1,
+          justifyContent: "space-between"  
+        }}>
         <ImageBackgroundInfo
-        coffeeItem={Coffee}
+          coffeeItem={Coffee}
           favourite={true}
           average_rating={1}
           rating={Coffee.rating}
           BackHandler={BackHandler}
         />
 
-        <View style={styles.FooterInfoArea}>
-        <Text style={styles.InfoTitle}>Nome</Text>
-        <Text numberOfLines={3} style={styles.DescriptionText}>
-                {Coffee.name}
-              </Text>
-        <Text style={styles.InfoTitle}>Descrição</Text>
+        <FooterInfoArea>
+        <InfoTitle>Nome</InfoTitle>
+          <DescriptionText numberOfLines={3}>
+            {Coffee.name}
+          </DescriptionText>
+        <InfoTitle>Descrição</InfoTitle>
           {fullDesc ? (
             <TouchableWithoutFeedback
               onPress={() => {
                 setFullDesc(prev => !prev);
               }}>
-              <Text style={styles.DescriptionText}>
+              <DescriptionText>
                 {Coffee.description}
-              </Text>
+              </DescriptionText>
             </TouchableWithoutFeedback>
           ) : (
             <TouchableWithoutFeedback
               onPress={() => {
                 setFullDesc(prev => !prev);
               }}>
-              <Text numberOfLines={3} style={styles.DescriptionText}>
+              <DescriptionText numberOfLines={3}>
                 {Coffee.description}
-              </Text>
+              </DescriptionText>
             </TouchableWithoutFeedback>
           )}
-          <Text style={styles.InfoTitle}>Quantidade</Text>
-          <View style={styles.SizeOuterContainer}>
-              <Text style={styles.SizeText}>{CoffeeQuantityText}</Text>
-          </View>
-        </View>
+          <InfoTitle>Quantidade</InfoTitle>
+          <SizeOuterContainer>
+              <SizeText>{CoffeeQuantityText}</SizeText>
+          </SizeOuterContainer>
+        </FooterInfoArea>
         <DetailsScreenFooter
           coffeeLink={Coffee.link}
-          
         />
       </ScrollView>
-    </View>
+    </ScreenContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  ScreenContainer: {
-    flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
-  },
-  ScrollViewFlex: {
-    flexGrow: 1,
-    justifyContent: 'space-between',
-  },
-  FooterInfoArea: {
-    padding: SPACING.space_20,
-  },
-  InfoTitle: {
-    fontFamily: FONTFAMILY.poppins_semibold,
-    fontSize: FONTSIZE.size_16,
-    color: COLORS.primaryWhiteHex,
-    marginBottom: SPACING.space_10,
-  },
-  DescriptionText: {
-    letterSpacing: 0.5,
-    fontFamily: FONTFAMILY.poppins_regular,
-    fontSize: FONTSIZE.size_14,
-    color: COLORS.primaryWhiteHex,
-    marginBottom: SPACING.space_30,
-  },
-  SizeOuterContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    gap: SPACING.space_20,
-  },
-  SizeBox: {
-    flex: 1,
-    backgroundColor: COLORS.primaryDarkGreyHex,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: SPACING.space_24 * 2,
-    borderRadius: BORDERRADIUS.radius_10,
-    borderWidth: 2,
-  },
-  SizeText: {
-    fontFamily: FONTFAMILY.poppins_medium,
-  },
-});
 
 export default DetailsScreen;
