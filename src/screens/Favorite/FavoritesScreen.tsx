@@ -4,11 +4,16 @@ import {
   View,
   StatusBar,
   ScrollView,
+  FlatList,
+  TouchableOpacity,
 } from 'react-native';
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
-import {COLORS, SPACING} from '../../theme/theme';
+import {COLORS} from '../../theme/theme';
 import HeaderBar from '../../components/HeaderBar';
 import EmptyListAnimation from '../../components/EmptyListAnimation';
+import { CoffeeList, FavoriteListData } from '../../models/CoffeeList';
+import { ScreenTitle } from './FavoritesScreen.styles';
+import NewCoffeeCard from '../../components/CoffeeCard/NewCoffeeCard';
 
 const FavoritesScreen = ({navigation}: any) => {
   const tabBarHeight = useBottomTabBarHeight();
@@ -16,17 +21,57 @@ const FavoritesScreen = ({navigation}: any) => {
   return (
     <View style={styles.ScreenContainer}>
       <StatusBar backgroundColor={COLORS.primaryBlackHex} />
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.ScrollViewFlex}>
+     
         <View
           style={[styles.ScrollViewInnerView, {marginBottom: tabBarHeight}]}>
           <View style={styles.ItemContainer}>
             <HeaderBar title="Favoritos" />
-              <EmptyListAnimation title={'Sem Favoritos'} />
+            {
+              FavoriteListData.length > 0 ? (
+                <FlatList
+                numColumns={2}
+                showsVerticalScrollIndicator={false}
+                ListHeaderComponent={
+                  <>
+                      <ScreenTitle>
+                          Aqui você econtra seus cafés favoritos
+                      </ScreenTitle>
+                  </>
+                }
+                showsHorizontalScrollIndicator={false}
+                data={FavoriteListData}
+                keyExtractor={(item: CoffeeList) => item._id}
+                columnWrapperStyle={{ 
+                  gap: 20,
+                }}
+                contentContainerStyle={{
+                  gap: 20,
+                  paddingVertical: 10,
+                  paddingHorizontal: 30,
+                }}
+                renderItem={({ item }: { item: CoffeeList }) => {
+                  return (
+                    <TouchableOpacity
+                      onPress={() => {
+                        console.log('Pressed')
+                        navigation.push('Details', {
+                          item: item,
+                        });
+                      }}>
+                      <NewCoffeeCard
+                        coffeeItem={item}
+                      />
+                    </TouchableOpacity>
+                  );
+                }}
+              />
+              ) : (
+                <EmptyListAnimation title={'Sem Favoritos'} />
+
+              )
+            }
           </View>
         </View>
-      </ScrollView>
     </View>
   );
 };
