@@ -13,10 +13,24 @@ export const ScrollView = styled.ScrollView`
     flex-grow: 1;
 `;
 
-export const CoffeeTitleContainer = styled.View`
+export const CoffeeTitleContainer = styled.TouchableOpacity`
     margin-top: 30px;
     margin-left: 30px;
-    alignItems: 'center';
+    margin-right: 30px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+`;
+
+export const SeeMoreText = styled.Text`
+    font-size: 14px;
+    font-family: 'Poppins-Regular';
+    color: #D3D3D3;
+`;
+
+export const SeeMoreContainer = styled.TouchableOpacity`
+    padding: 0px;
 `;
 
 export const CoffeeTitle = styled.Text`
@@ -39,9 +53,10 @@ export const ScreenTitle = styled.Text`
 
 export const EmptyListContainer = styled.View`
     width: ${dimensionX}px;
-    alignItems: 'center';
-    justifyContent: 'center';
-    paddingVertical: ${paddingVertical}px;
+    align-items: 'center';
+    justify-content: 'center';
+    padding-left: ${paddingVertical}px;
+    padding-right: ${paddingVertical}px;
 `;
 
 export const CategoryText = styled.Text`

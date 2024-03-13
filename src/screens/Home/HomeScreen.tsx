@@ -7,8 +7,9 @@ import {
 import { COLORS } from '../../theme/theme';
 import HeaderBar from '../../components/HeaderBar';
 import { BeanListData, CoffeeList, CoffeeListData } from '../../models/CoffeeList';
-import { CategoryText, CoffeeTitle, CoffeeTitleContainer, Container, EmptyListContainer, FooterContainer, ScreenTitle, ScrollView } from './HomeScreen.styles';
+import { CategoryText, CoffeeTitle, CoffeeTitleContainer, Container, EmptyListContainer, FooterContainer, ScreenTitle, ScrollView, SeeMoreContainer, SeeMoreText } from './HomeScreen.styles';
 import NewCoffeeCard from '../../components/CoffeeCard/NewCoffeeCard';
+import CoffeeCarousel from '../../components/Carousel/Carousel';
 
 
 const HomeScreen = ({navigation}: any) => {
@@ -36,82 +37,10 @@ const HomeScreen = ({navigation}: any) => {
         <ScreenTitle>
             Encontre o café{'\n'}que mais combina{'\n'}com você
         </ScreenTitle>
+        <CoffeeCarousel coffeeList={CoffeeListData} title="Cafés em capsulas" navigation={navigation} />
 
-        {CoffeeListData.length && (
-          <>
-          { CoffeeListData.length && (
-            <>
-            <CoffeeTitleContainer>
-              <CoffeeTitle>Cafés em cápsulas</CoffeeTitle>
-            </CoffeeTitleContainer>
-
-            <FlatList
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              data={CoffeeListData}
-              keyExtractor={(item: CoffeeList) => item._id}
-              contentContainerStyle={{
-                gap: 20,
-                paddingVertical: 10,
-                paddingHorizontal: 30,
-              }}
-              renderItem={({ item }: { item: CoffeeList }) => {
-                return (
-                  <TouchableOpacity
-                    onPress={() => {
-                      console.log('Pressed')
-                      navigation.push('Details', {
-                        item: item,
-                      });
-                    }}>
-                    <NewCoffeeCard
-                      coffeeItem={item}
-                    />
-                  </TouchableOpacity>
-                );
-              }}
-            />
-        </>
-          )}
-          { BeanListData.length && (
-            <>
-             <CoffeeTitleContainer>
-              <CoffeeTitle>Cafés em grãos</CoffeeTitle>
-            </CoffeeTitleContainer>
-
-            <FlatList
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              data={BeanListData}
-              keyExtractor={(item: CoffeeList) => item._id}
-              contentContainerStyle={{
-                gap: 20,
-                paddingVertical: 10,
-                paddingHorizontal: 30,
-              }}
-              renderItem={({ item }: { item: CoffeeList }) => {
-                return (
-                  <TouchableOpacity
-                    onPress={() => {
-                      console.log('Pressed')
-                      navigation.push('Details', {
-                        item: item,
-                      });
-                    }}>
-                    <NewCoffeeCard
-                      coffeeItem={item}
-                    />
-                  </TouchableOpacity>
-                );
-              }}
-            />
-            </>
-          )}
-
-       
-        </>
-        ) 
-        }
+        <CoffeeCarousel coffeeList={BeanListData} title="Cafés em grãos" navigation={navigation} />
+        
         <FooterContainer/>  
 
       </ScrollView>
