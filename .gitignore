@@ -1,2 +1,56 @@
-node_modules
-yarn.lock
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Diretórios do sistema
+.DS_Store
+.idea/
+.vscode/
+
+# Diretórios de dependências
+node_modules/
+# Se você estiver usando o npm 5+, pode ignorar esse diretório
+# pois o npm armazena automaticamente os pacotes dependentes aqui
+npm-shrinkwrap.json
+
+# Pastas do iOS
+ios/Pods/
+ios/build/
+ios/DerivedData/
+
+# Pastas do Android
+/android/.gradle/
+android/app/build/
+android/local.properties
+android/.idea/
+android/.cxx/
+android/app/.cxx/
+android/app/.externalNativeBuild/
+android/.vs/
+
+# Cache do Metro Bundler
+.expo/
+.expo-shared/
+.bundle
+.packager
+.expo
+.expo-shared
+.haul/
+.flowconfig
+.flow-typed/
+node_modules/
+
+# Configurações do sistema operacional
+*.swp
+*~
+.lock-wscript
+.lock
+
+# Build folders
+build/
+dist/
+
+# Test output
+coverage/
