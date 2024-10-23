@@ -1,68 +1,67 @@
-import { styled } from "styled-components/native"
-
+import { styled } from "styled-components/native";
 
 export const CardRatingContainer = styled.View`
-    flex-direction: row;
-    background-color: #00000080;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding-horizontal: 15px;
-    position: absolute;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
-    top: 0;
-    right: 0;
+  flex-direction: row;
+  background-color: #00000080;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-horizontal: 15px;
+  position: absolute;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  top: 0;
+  right: 0;
 `;
 
 export const CardRatingText = styled.Text`
-    font-family: "Poppins-Medium";
-    color: #FFFFFF;
-    line-height: 22px;
-    font-size: 14px;
+  font-family: "Poppins-Medium";
+  color: #ffffff;
+  line-height: 22px;
+  font-size: 14px;
 `;
 
 export const CardTitle = styled.Text`
-    font-family: "Poppins-Medium";
-    color: #FFFFFF;
-    font-size: 16px;
+  font-family: "Poppins-Medium";
+  color: #ffffff;
+  font-size: 16px;
 `;
 
 export const CardSubtitle = styled.Text`
-    font-family: "Poppins-Light";
-    color: #FFFFFF;
-    font-size: 10px;
+  font-family: "Poppins-Light";
+  color: #ffffff;
+  font-size: 10px;
 `;
 
 export const CardFooterRow = styled.View`
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-    margin-top: 15px;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: 15px;
 `;
 
 export const CardPriceCurrency = styled.Text`
-    font-family: "Poppins-SemiBold";
-    color: #FFA500;
-    font-size: 18px;
+  font-family: "Poppins-SemiBold";
+  color: #ffa500;
+  font-size: 18px;
 `;
 
 export const CardPrice = styled.Text`
-    color: #FFFFFF;
+  color: #ffffff;
 `;
 
 export const QuantityTitle = styled.Text`
-    font-family: "Poppins-Medium";
-    color: #FFFFFF;
-    font-size: 12px;
+  font-family: "Poppins-Medium";
+  color: #ffffff;
+  font-size: 12px;
 `;
 
 export const SocialImageView = styled.TouchableOpacity`
-    background: #D17842;
-    width: 30px;
-    height: 30px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
+  background: #d17842;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
 `;

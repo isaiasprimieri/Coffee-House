@@ -1,4 +1,4 @@
-import Styles from 'styled-components/native';
+import Styles from "styled-components/native";
 
 export const Container = Styles.View`
   flex: 1;
