@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 
 export const Container = styled.View`
   display: flex;
@@ -19,7 +19,7 @@ export const PayButton = styled.TouchableOpacity`
 `;
 
 export const ButtonText = styled.Text`
-  font-family: 'Poppins-SemiBold';
+  font-family: "Poppins-SemiBold";
   font-size: 18px;
   color: #ffffff;
 `;

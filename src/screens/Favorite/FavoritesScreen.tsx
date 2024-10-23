@@ -1,22 +1,15 @@
-import React from 'react';
-import {
-  StyleSheet,
-  View,
-  StatusBar,
-  ScrollView,
-  FlatList,
-  TouchableOpacity,
-} from 'react-native';
-import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
-import {COLORS} from '../../theme/theme';
-import HeaderBar from '../../components/HeaderBar';
-import EmptyListAnimation from '../../components/EmptyListAnimation';
-import {CoffeeList, FavoriteListData} from '../../models/CoffeeList';
-import {Container, ScreenTitle} from './FavoritesScreen.styles';
-import CoffeeCard from '../../components/CoffeeCard/CoffeeCard';
-import FooterTabScreenComponent from '../../components/FooterTabScreenComponent/FooterTabScreenComponent';
+import React from "react";
+import { StyleSheet, View, StatusBar, ScrollView, FlatList, TouchableOpacity } from "react-native";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
+import { COLORS } from "../../theme/theme";
+import HeaderBar from "../../components/HeaderBar";
+import EmptyListAnimation from "../../components/EmptyListAnimation";
+import { CoffeeList, FavoriteListData } from "../../models/CoffeeList";
+import { Container, ScreenTitle } from "./FavoritesScreen.styles";
+import CoffeeCard from "../../components/CoffeeCard/CoffeeCard";
+import FooterTabScreenComponent from "../../components/FooterTabScreenComponent/FooterTabScreenComponent";
 
-const FavoritesScreen = ({navigation}: any) => {
+const FavoritesScreen = ({ navigation }: any) => {
   const tabBarHeight = useBottomTabBarHeight();
 
   return (
@@ -32,9 +25,7 @@ const FavoritesScreen = ({navigation}: any) => {
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={
               <>
-                <ScreenTitle>
-                  Aqui você econtra seus cafés favoritos
-                </ScreenTitle>
+                <ScreenTitle>Aqui você econtra seus cafés favoritos</ScreenTitle>
               </>
             }
             showsHorizontalScrollIndicator={false}
@@ -48,15 +39,16 @@ const FavoritesScreen = ({navigation}: any) => {
               paddingVertical: 10,
               paddingHorizontal: 30,
             }}
-            renderItem={({item}: {item: CoffeeList}) => {
+            renderItem={({ item }: { item: CoffeeList }) => {
               return (
                 <TouchableOpacity
                   onPress={() => {
-                    console.log('Pressed');
-                    navigation.push('Details', {
+                    console.log("Pressed");
+                    navigation.push("Details", {
                       item: item,
                     });
-                  }}>
+                  }}
+                >
                   <CoffeeCard coffeeItem={item} />
                 </TouchableOpacity>
               );
@@ -65,7 +57,7 @@ const FavoritesScreen = ({navigation}: any) => {
         ) : (
           <>
             <HeaderBar title="Favoritos" />
-            <EmptyListAnimation title={'Sem Favoritos'} />
+            <EmptyListAnimation title={"Sem Favoritos"} />
           </>
         )}
       </View>
@@ -74,19 +66,19 @@ const FavoritesScreen = ({navigation}: any) => {
 };
 
 const styles = StyleSheet.create({
-  ScreenContainer: {
+  ItemContainer: {
     flex: 1,
+  },
+  ScreenContainer: {
     backgroundColor: COLORS.primaryBlackHex,
+    flex: 1,
   },
   ScrollViewFlex: {
     flexGrow: 1,
   },
   ScrollViewInnerView: {
     flex: 1,
-    justifyContent: 'space-between',
-  },
-  ItemContainer: {
-    flex: 1,
+    justifyContent: "space-between",
   },
 });
 

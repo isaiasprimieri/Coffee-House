@@ -1,12 +1,12 @@
-import React from 'react';
-import {StyleSheet} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {COLORS} from '../theme/theme';
-import {BlurView} from '@react-native-community/blur';
-import CustomIcon from '../models/CustomIcon';
-import HomeScreen from '../screens/Home/HomeScreen';
-import FrequentlyBuyScreen from '../screens/History/FrequentlyBuyScreen';
-import FavoritesScreen from '../screens/Favorite/FavoritesScreen';
+import React from "react";
+import { StyleSheet } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { COLORS } from "../theme/theme";
+import { BlurView } from "@react-native-community/blur";
+import CustomIcon from "../models/CustomIcon";
+import HomeScreen from "../screens/Home/HomeScreen";
+import FrequentlyBuyScreen from "../screens/History/FrequentlyBuyScreen";
+import FavoritesScreen from "../screens/Favorite/FavoritesScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,18 +25,17 @@ const TabNavigator = () => {
             style={styles.BlurViewStyles}
           />
         ),
-      }}>
+      }}
+    >
       <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarIcon: ({focused, color, size}) => (
+          tabBarIcon: ({ focused, color, size }) => (
             <CustomIcon
               name="home"
               size={25}
-              color={
-                focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
-              }
+              color={focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex}
             />
           ),
         }}
@@ -45,13 +44,11 @@ const TabNavigator = () => {
         name="Favorite"
         component={FavoritesScreen}
         options={{
-          tabBarIcon: ({focused, color, size}) => (
+          tabBarIcon: ({ focused, color, size }) => (
             <CustomIcon
               name="like"
               size={25}
-              color={
-                focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
-              }
+              color={focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex}
             />
           ),
         }}
@@ -60,13 +57,11 @@ const TabNavigator = () => {
         name="History"
         component={FrequentlyBuyScreen}
         options={{
-          tabBarIcon: ({focused, color, size}) => (
+          tabBarIcon: ({ focused, color, size }) => (
             <CustomIcon
               name="bell"
               size={25}
-              color={
-                focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
-              }
+              color={focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex}
             />
           ),
         }}
@@ -76,20 +71,20 @@ const TabNavigator = () => {
 };
 
 const styles = StyleSheet.create({
-  tabBarStyle: {
-    height: 80,
-    position: 'absolute',
-    backgroundColor: COLORS.primaryBlackRGBA,
-    borderTopWidth: 0,
-    elevation: 0,
-    borderTopColor: 'transparent',
-  },
   BlurViewStyles: {
-    position: 'absolute',
-    top: 0,
     bottom: 0,
     left: 0,
+    position: "absolute",
     right: 0,
+    top: 0,
+  },
+  tabBarStyle: {
+    backgroundColor: COLORS.primaryBlackRGBA,
+    borderTopColor: "transparent",
+    borderTopWidth: 0,
+    elevation: 0,
+    height: 80,
+    position: "absolute",
   },
 });
 

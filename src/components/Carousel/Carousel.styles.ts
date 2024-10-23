@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 
 export const CarouselContainer = styled.View``;
 
@@ -13,6 +13,6 @@ export const CarouselTitleContainer = styled.TouchableOpacity`
 
 export const SeeMoreText = styled.Text`
   font-size: 14px;
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
   color: #d3d3d3;
 `;

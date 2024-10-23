@@ -1,9 +1,9 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 
 const FONTFAMILY = {
-  poppins_semibold: 'Poppins Semibold',
-  poppins_regular: 'Poppins Regular',
-  poppins_medium: 'Poppins Medium',
+  poppins_semibold: "Poppins Semibold",
+  poppins_regular: "Poppins Regular",
+  poppins_medium: "Poppins Medium",
 };
 
 export const ScreenContainer = styled.View`

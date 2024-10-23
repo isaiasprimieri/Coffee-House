@@ -1,13 +1,9 @@
-import React from 'react';
-import {FlatList, TouchableOpacity} from 'react-native';
-import {CoffeeList} from '../../models/CoffeeList';
-import {
-  CarouselContainer,
-  CarouselTitleContainer,
-  SeeMoreText,
-} from './Carousel.styles';
-import {CoffeeTitle} from '../../screens/Home/HomeScreen.styles';
-import CoffeeCard from '../CoffeeCard/CoffeeCard';
+import React from "react";
+import { FlatList, TouchableOpacity } from "react-native";
+import { CoffeeList } from "../../models/CoffeeList";
+import { CarouselContainer, CarouselTitleContainer, SeeMoreText } from "./Carousel.styles";
+import { CoffeeTitle } from "../../screens/Home/HomeScreen.styles";
+import CoffeeCard from "../CoffeeCard/CoffeeCard";
 
 interface CoffeeCarouselProps {
   navigation: any;
@@ -15,19 +11,16 @@ interface CoffeeCarouselProps {
   title: string;
 }
 
-const CoffeeCarousel: React.FC<CoffeeCarouselProps> = ({
-  navigation,
-  coffeeList,
-  title,
-}) => {
+const CoffeeCarousel: React.FC<CoffeeCarouselProps> = ({ navigation, coffeeList, title }) => {
   return (
     <CarouselContainer>
       <CarouselTitleContainer
         onPress={() => {
-          navigation.push('Coffees', {
+          navigation.push("Coffees", {
             item: coffeeList,
           });
-        }}>
+        }}
+      >
         <CoffeeTitle>{title}</CoffeeTitle>
 
         <SeeMoreText>Ver mais</SeeMoreText>
@@ -43,15 +36,16 @@ const CoffeeCarousel: React.FC<CoffeeCarouselProps> = ({
           paddingVertical: 10,
           paddingHorizontal: 30,
         }}
-        renderItem={({item}: {item: CoffeeList}) => {
+        renderItem={({ item }: { item: CoffeeList }) => {
           return (
             <TouchableOpacity
               onPress={() => {
-                console.log('Pressed');
-                navigation.push('Details', {
+                console.log("Pressed");
+                navigation.push("Details", {
                   item: item,
                 });
-              }}>
+              }}
+            >
               <CoffeeCard coffeeItem={item} />
             </TouchableOpacity>
           );

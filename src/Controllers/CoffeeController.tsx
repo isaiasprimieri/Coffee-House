@@ -10,15 +10,15 @@ export async function getCapsuleCoffeeList(): Promise<CoffeeList[]> {
   return new Promise((resolve, reject) => {
     setTimeout(async () => {
       try {
-        const response = await fetch('http://localhost:3000/coffee/capsule');
+        const response = await fetch("http://localhost:3000/coffee/capsule");
         if (!response.ok) {
-          throw new Error('Failed to fetch coffee list');
+          throw new Error("Failed to fetch coffee list");
         }
         const coffeeList: CoffeeList[] = await response.json();
         console.log(coffeeList);
         resolve(coffeeList);
       } catch (error) {
-        console.log('Error:', error.message);
+        console.log("Error:", error.message);
         reject(error);
       }
     }, 5000); // Wait for 5 seconds before making the request

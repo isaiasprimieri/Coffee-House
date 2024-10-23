@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import TabNavigator from './src/navigators/TabNavigator';
-import SplashScreen from 'react-native-splash-screen';
-import DetailsScreen from './src/screens/Details/DetailsScreen';
-import CoffeesScreen from './src/screens/Coffees/CoffeesScreen';
+import React, { useEffect } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import TabNavigator from "./src/navigators/TabNavigator";
+import SplashScreen from "react-native-splash-screen";
+import DetailsScreen from "./src/screens/Details/DetailsScreen";
+import CoffeesScreen from "./src/screens/Coffees/CoffeesScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,21 +14,21 @@ const App = () => {
   }, []);
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen
           name="Tab"
           component={TabNavigator}
-          options={{animation: 'none'}}
+          options={{ animation: "none" }}
         />
         <Stack.Screen
           name="Details"
           component={DetailsScreen}
-          options={{animation: 'none'}}
+          options={{ animation: "none" }}
         />
         <Stack.Screen
           name="Coffees"
           component={CoffeesScreen}
-          options={{animation: 'none'}}
+          options={{ animation: "none" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

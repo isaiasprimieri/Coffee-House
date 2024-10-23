@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {StatusBar, TouchableWithoutFeedback, ScrollView} from 'react-native';
-import ImageBackgroundInfo from '../../components/ImageBackgroundInfo';
-import DetailsScreenFooter from '../../components/DetailsScreenFooter/DetailsScreenFooter';
-import {CoffeeList} from '../../models/CoffeeList';
+import React, { useState } from "react";
+import { StatusBar, TouchableWithoutFeedback, ScrollView } from "react-native";
+import ImageBackgroundInfo from "../../components/ImageBackgroundInfo";
+import DetailsScreenFooter from "../../components/DetailsScreenFooter/DetailsScreenFooter";
+import { CoffeeList } from "../../models/CoffeeList";
 import {
   DescriptionText,
   FooterInfoArea,
@@ -10,14 +10,11 @@ import {
   ScreenContainer,
   SizeOuterContainer,
   SizeText,
-} from './DetailsScreen.styles';
+} from "./DetailsScreen.styles";
 
-const DetailsScreen = ({navigation, route}: any) => {
+const DetailsScreen = ({ navigation, route }: any) => {
   const Coffee: CoffeeList = route.params.item;
-  const CoffeeQuantityText =
-    Coffee.type === 'CAPSULES'
-      ? Coffee.quantity + ' capsulas'
-      : Coffee.quantity + ' de grãos';
+  const CoffeeQuantityText = Coffee.type === "CAPSULES" ? Coffee.quantity + " capsulas" : Coffee.quantity + " de grãos";
 
   const [fullDesc, setFullDesc] = useState(false);
 
@@ -27,13 +24,17 @@ const DetailsScreen = ({navigation, route}: any) => {
 
   return (
     <ScreenContainer>
-      <StatusBar translucent backgroundColor="transparent" />
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+      />
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
           flexGrow: 1,
-          justifyContent: 'space-between',
-        }}>
+          justifyContent: "space-between",
+        }}
+      >
         <ImageBackgroundInfo
           coffeeItem={Coffee}
           favourite={true}
@@ -49,18 +50,18 @@ const DetailsScreen = ({navigation, route}: any) => {
           {fullDesc ? (
             <TouchableWithoutFeedback
               onPress={() => {
-                setFullDesc(prev => !prev);
-              }}>
+                setFullDesc((prev) => !prev);
+              }}
+            >
               <DescriptionText>{Coffee.description}</DescriptionText>
             </TouchableWithoutFeedback>
           ) : (
             <TouchableWithoutFeedback
               onPress={() => {
-                setFullDesc(prev => !prev);
-              }}>
-              <DescriptionText numberOfLines={3}>
-                {Coffee.description}
-              </DescriptionText>
+                setFullDesc((prev) => !prev);
+              }}
+            >
+              <DescriptionText numberOfLines={3}>{Coffee.description}</DescriptionText>
             </TouchableWithoutFeedback>
           )}
           <InfoTitle>Quantidade</InfoTitle>

@@ -1,4 +1,4 @@
-import {styled} from 'styled-components/native';
+import { styled } from "styled-components/native";
 
 export const CardRatingContainer = styled.View`
   flex-direction: row;
@@ -15,20 +15,20 @@ export const CardRatingContainer = styled.View`
 `;
 
 export const CardRatingText = styled.Text`
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
   color: #ffffff;
   line-height: 22px;
   font-size: 14px;
 `;
 
 export const CardTitle = styled.Text`
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
   color: #ffffff;
   font-size: 16px;
 `;
 
 export const CardSubtitle = styled.Text`
-  font-family: 'Poppins-Light';
+  font-family: "Poppins-Light";
   color: #ffffff;
   font-size: 10px;
 `;
@@ -42,7 +42,7 @@ export const CardFooterRow = styled.View`
 `;
 
 export const CardPriceCurrency = styled.Text`
-  font-family: 'Poppins-SemiBold';
+  font-family: "Poppins-SemiBold";
   color: #ffa500;
   font-size: 18px;
 `;
@@ -52,7 +52,7 @@ export const CardPrice = styled.Text`
 `;
 
 export const QuantityTitle = styled.Text`
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
   color: #ffffff;
   font-size: 12px;
 `;

@@ -1,27 +1,19 @@
-import {BackHandler, FlatList, StatusBar, TouchableOpacity} from 'react-native';
-import React from 'react';
-import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
-import {COLORS, FONTSIZE} from '../../theme/theme';
-import HeaderBar from '../../components/HeaderBar';
-import EmptyListAnimation from '../../components/EmptyListAnimation';
-import {
-  Container,
-  ImageHeaderBarContainerWithBack,
-  ScreenTitle,
-  ScrollView,
-} from './CoffeesScreen.styles';
-import {CoffeeList} from '../../models/CoffeeList';
-import CoffeeCard from '../../components/CoffeeCard/CoffeeCard';
-import GradientBGIcon from '../../components/GradientBGIcon';
+import { BackHandler, FlatList, StatusBar, TouchableOpacity } from "react-native";
+import React from "react";
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
+import { COLORS, FONTSIZE } from "../../theme/theme";
+import HeaderBar from "../../components/HeaderBar";
+import EmptyListAnimation from "../../components/EmptyListAnimation";
+import { Container, ImageHeaderBarContainerWithBack, ScreenTitle, ScrollView } from "./CoffeesScreen.styles";
+import { CoffeeList } from "../../models/CoffeeList";
+import CoffeeCard from "../../components/CoffeeCard/CoffeeCard";
+import GradientBGIcon from "../../components/GradientBGIcon";
 
-const CoffeesScreen = ({navigation, route}: any) => {
+const CoffeesScreen = ({ navigation, route }: any) => {
   const CoffeeListData: CoffeeList[] = route.params.item;
-  const screenTitle =
-    'Seus cafés em ' +
-    (CoffeeListData[0].type === 'CAPSULES' ? 'cápsulas' : 'grãos') +
-    ' estão aqui';
+  const screenTitle = "Seus cafés em " + (CoffeeListData[0].type === "CAPSULES" ? "cápsulas" : "grãos") + " estão aqui";
   const BackHandler = () => {
-    navigation.navigate('Home');
+    navigation.navigate("Home");
   };
   return (
     <Container>
@@ -31,7 +23,8 @@ const CoffeesScreen = ({navigation, route}: any) => {
         <TouchableOpacity
           onPress={() => {
             BackHandler();
-          }}>
+          }}
+        >
           <GradientBGIcon
             name="left"
             color={COLORS.primaryLightGreyHex}
@@ -59,15 +52,16 @@ const CoffeesScreen = ({navigation, route}: any) => {
           paddingVertical: 10,
           paddingHorizontal: 30,
         }}
-        renderItem={({item}: {item: CoffeeList}) => {
+        renderItem={({ item }: { item: CoffeeList }) => {
           return (
             <TouchableOpacity
               onPress={() => {
-                console.log('Pressed');
-                navigation.push('Details', {
+                console.log("Pressed");
+                navigation.push("Details", {
                   item: item,
                 });
-              }}>
+              }}
+            >
               <CoffeeCard coffeeItem={item} />
             </TouchableOpacity>
           );

@@ -1,7 +1,7 @@
-import {Dimensions} from 'react-native';
-import styled from 'styled-components/native';
+import { Dimensions } from "react-native";
+import styled from "styled-components/native";
 
-const dimensionX = Dimensions.get('window').width - 30 * 2;
+const dimensionX = Dimensions.get("window").width - 30 * 2;
 const paddingVertical = 36 * 3.6;
 
 export const Container = styled.View`
@@ -24,7 +24,7 @@ export const CoffeeTitleContainer = styled.TouchableOpacity`
 
 export const SeeMoreText = styled.Text`
   font-size: 14px;
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
   color: #d3d3d3;
 `;
 
@@ -34,7 +34,7 @@ export const SeeMoreContainer = styled.TouchableOpacity`
 
 export const CoffeeTitle = styled.Text`
   font-size: 18px;
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
   color: #d3d3d3;
 `;
 
@@ -45,21 +45,21 @@ export const FooterContainer = styled.View`
 
 export const ScreenTitle = styled.Text`
   font-size: 28px;
-  font-family: 'Poppins-SemiBold';
+  font-family: "Poppins-SemiBold";
   color: #ffffff;
   padding-left: 30px;
 `;
 
 export const EmptyListContainer = styled.View`
   width: ${dimensionX}px;
-  align-items: 'center';
-  justify-content: 'center';
+  align-items: "center";
+  justify-content: "center";
   padding-left: ${paddingVertical}px;
   padding-right: ${paddingVertical}px;
 `;
 
 export const CategoryText = styled.Text`
-  font-family: 'Poppins-SemiBold';
+  font-family: "Poppins-SemiBold";
   font-size: 16px;
   color: #d3d3d3;
   margin-bottom: 4px;
