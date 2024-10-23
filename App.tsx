@@ -18,15 +18,18 @@ const App = () => {
         <Stack.Screen
           name="Tab"
           component={TabNavigator}
-          options={{animation: 'none'}}></Stack.Screen>
+          options={{animation: 'none'}}
+        />
         <Stack.Screen
           name="Details"
           component={DetailsScreen}
-          options={{animation: 'none'}}></Stack.Screen>
-          <Stack.Screen
+          options={{animation: 'none'}}
+        />
+        <Stack.Screen
           name="Coffees"
           component={CoffeesScreen}
-          options={{animation: 'none'}}></Stack.Screen>
+          options={{animation: 'none'}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -39,7 +39,8 @@ const TabNavigator = () => {
               }
             />
           ),
-        }}></Tab.Screen>
+        }}
+      />
       <Tab.Screen
         name="Favorite"
         component={FavoritesScreen}
@@ -53,7 +54,8 @@ const TabNavigator = () => {
               }
             />
           ),
-        }}></Tab.Screen>
+        }}
+      />
       <Tab.Screen
         name="History"
         component={FrequentlyBuyScreen}
@@ -67,7 +69,8 @@ const TabNavigator = () => {
               }
             />
           ),
-        }}></Tab.Screen>
+        }}
+      />
     </Tab.Navigator>
   );
 };
