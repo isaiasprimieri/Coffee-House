@@ -11,6 +11,7 @@ import {
   ScrollViewInnerView,
 } from './FrequentlyBuyScreen.styles';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const FrequentlyBuyScreen = ({navigation}: any) => {
   const tabBarHeight = useBottomTabBarHeight();
 
