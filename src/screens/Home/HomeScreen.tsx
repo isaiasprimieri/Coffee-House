@@ -56,8 +56,7 @@ const HomeScreen = ({navigation}: any) => {
         <CoffeeCarousel
           coffeeList={BeanListData}
           title="Cafés em grãos"
-          navigation={navigation}
-
+          navigation={navigation}/>
         <FooterTabScreenComponent />
       </ScrollView>
     </Container>
